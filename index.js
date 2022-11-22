@@ -42,7 +42,9 @@ function getAllMovieTitles(movies) {
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {string[]} An array of strings, all of which are song titles.
  */
-function getSongTitles(songs) {}
+function getSongTitles(songs) {
+  return songs.map( song => song.title );
+}
 
 /**
  * Returns an array of all of the song titles with the artist.
@@ -202,7 +204,15 @@ function getAllMoviesReleasedAtOrBeforeYear(movies, year) {}
  *  getHighestMetascore(movies);
  *  //> 96
  */
-function getHighestMetascore(movies) {}
+function getHighestMetascore(movies) {
+
+  if(!movies.length){
+    return 0;
+  }
+
+  return movies.map(movie => movie.metascore ).reduce( (metascore1, metascore2) => Math.max(metascore1, metascore2));
+  // return Number( movies.sort( (movieA, movieB) => Number(movieA.metascore - movieB.metascore)).pop().metascore );
+}
 
 /**
  * getAverageIMDBRating()
