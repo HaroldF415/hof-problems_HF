@@ -33,7 +33,9 @@ const exampleSongData = require("./data/songs");
       "James and the Giant Peach",
     ];
  */
-function getAllMovieTitles(movies) {}
+function getAllMovieTitles(movies) {
+  return movies.map( movie => movie.title );
+};
 
 /**
  * Returns an array of all of the song titles.
