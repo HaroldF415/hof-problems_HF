@@ -25,7 +25,7 @@ describe("allSongsAreOverTwoMinutes()", () => {
   });
 });
 
-describe("anySongIsOverFourMinutes()", () => {
+describe.only("anySongIsOverFourMinutes()", () => {
   let songs;
   beforeEach(() => {
     jest.resetModules();
