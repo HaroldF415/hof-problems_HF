@@ -298,7 +298,9 @@ function anySongIsOverFourMinutes(songs) {
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {boolean}
  */
-function anySongIsByPeanut(songs) {}
+function anySongIsByPeanut(songs) {
+  return songs.any( song => song.artist === 'Peanut' );
+};
 
 // Do not change anything below this line.
 module.exports = {
