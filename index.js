@@ -267,6 +267,7 @@ const convertBoxOfficeToNumber = ( boxOffice ) => {
 }
 
 function getBiggestBoxOfficeMovie(movies) {
+  return !movies.length ? null : movies.find( movie => convertBoxOfficeToNumber(movie.boxOffice) === movies.map( movie => convertBoxOfficeToNumber( movie.boxOffice )).reduce( (boxOffice1, boxOffice2) => Math.max(boxOffice1, boxOffice2) ) ).title;
 };
 
 
