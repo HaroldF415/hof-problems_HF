@@ -139,14 +139,19 @@ function getSongsBySaib(songs) {
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]} An array of objects.
  */
-function getSongsOverThreeMinutes(songs) {}
+function getSongsOverThreeMinutes(songs) {
+  return songs.filter( song => song.runtimeInSeconds > 180 );
+};
 
 /**
  * Returns an array of songs where the song title is the same as the song album.
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]} An array of objects.
  */
-function getTitleTracks(songs) {}
+function getTitleTracks(songs) {
+  return songs.filter( song => song.title === song.album );
+};
+
 /**
  * filterByGenre()
  * -----------------------------
@@ -167,7 +172,19 @@ function getTitleTracks(songs) {}
  *  filterByGenre(movies, "Horror")
  *  //> []
  */
-function filterByGenre(movies, genre) {}
+function filterByGenre(movies, genre) {
+  
+  let filMovies = [];
+  
+  if( !movies.length ){
+    return filMovies;
+  }
+
+  filMovies = movies.filter( movie => movie.genre.toLowerCase().split(', ').includes( genre.toLowerCase() ) );
+
+  return filMovies;
+
+};
 // const answer = [];
 // for (let i = 0; i < movies.length; i++) {
 //   if (
