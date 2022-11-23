@@ -130,7 +130,9 @@ function findById(movies, id) {
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]} An array of objects.
  */
-function getSongsBySaib(songs) {}
+function getSongsBySaib(songs) {
+  return songs.filter( song => song.artist === 'Saib' );
+};
 
 /**
  * Returns an array of all songs where the runtime is over three minutes.
