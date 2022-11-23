@@ -218,14 +218,8 @@ function getAllMoviesReleasedAtOrBeforeYear(movies, year) {
  *  //> 96
  */
 function getHighestMetascore(movies) {
-
-  if(!movies.length){
-    return 0;
-  }
-
-  return movies.map(movie => movie.metascore ).reduce( (metascore1, metascore2) => Math.max(metascore1, metascore2));
-  // return Number( movies.sort( (movieA, movieB) => Number(movieA.metascore - movieB.metascore)).pop().metascore );
-}
+  return !movies.length ? 0 : movies.map(movie => movie.metascore ).reduce( (metascore1, metascore2) => Math.max(metascore1, metascore2));
+};
 
 /**
  * getAverageIMDBRating()
