@@ -218,7 +218,7 @@ function getAllMoviesReleasedAtOrBeforeYear(movies, year) {
  *  //> 96
  */
 function getHighestMetascore(movies) {
-  return !movies.length ? 0 : movies.map(movie => movie.metascore ).reduce( (metascore1, metascore2) => Math.max(metascore1, metascore2));
+  return !movies.length ? 0 : movies.map( movie => movie.metascore ).reduce( (metascore1, metascore2) => Math.max(metascore1, metascore2));
 };
 
 /**
@@ -232,7 +232,9 @@ function getHighestMetascore(movies) {
  *  getAverageIMDBRating(movies);
  *  //> 7.76
  */
-function getAverageIMDBRating(movies) {}
+function getAverageIMDBRating(movies) {
+  return !movies.length ? 0 : Number( (movies.map( movie => Number(movie.imdbRating) ).reduce( (ratingA, ratingB) => ratingA + ratingB ) / movies.length).toFixed(2))
+};
 
 /**
  * countByRating()
