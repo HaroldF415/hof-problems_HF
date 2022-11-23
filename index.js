@@ -173,28 +173,8 @@ function getTitleTracks(songs) {
  *  //> []
  */
 function filterByGenre(movies, genre) {
-  
-  let filMovies = [];
-  
-  if( !movies.length ){
-    return filMovies;
-  }
-
-  filMovies = movies.filter( movie => movie.genre.toLowerCase().split(', ').includes( genre.toLowerCase() ) );
-
-  return filMovies;
-
+  return !movies.length ? [] : movies.filter( movie => movie.genre.toLowerCase().split(', ').includes( genre.toLowerCase() ) );
 };
-// const answer = [];
-// for (let i = 0; i < movies.length; i++) {
-//   if (
-//     movies[i].genre.toLowerCase().split(", ").includes(genre.toLowerCase())
-//   ) {
-//     answer.push(movies[i]);
-//   }
-// }
-
-// return answer;
 
 /**
  * getAllMoviesReleasedAtOrBeforeYear()
@@ -218,7 +198,9 @@ function filterByGenre(movies, genre) {
       }
     ];
  */
-function getAllMoviesReleasedAtOrBeforeYear(movies, year) {}
+function getAllMoviesReleasedAtOrBeforeYear(movies, year) {
+  return !movies.length ? [] : movies.filter( movie => movie.released.split(' ').reverse()[0] <= year );
+}
 
 /*
  * REDUCE PROBLEMS
