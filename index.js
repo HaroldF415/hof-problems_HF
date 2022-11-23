@@ -117,7 +117,9 @@ function findFirstTitleTrack(songs) {
       // Toy Story 4
     };
  */
-function findById(movies, id) {}
+function findById(movies, id) {
+  return !movies.length ? null : movies.find( movie => movie.imdbID === id ) ? movies.find( movie => movie.imdbID === id ) : null;
+};
 
 /**
  * FILTER PROBLEMS
