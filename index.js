@@ -247,7 +247,9 @@ function getAverageIMDBRating(movies) {
  *  countByRating(movies);
  *  //> { G: 3, PG: 7 }
  */
-function countByRating(movies) {}
+function countByRating(movies) {
+  return !movies.length ? {} : movies.map( movie => movie.rated ).reduce( (ratingA, ratingB) => { return ratingA[ratingB] ? ++ratingA[ratingB] : ratingA[ratingB] = 1, ratingA },{} );
+};
 
 /**
  * getBiggestBoxOfficeMovie()
@@ -260,9 +262,12 @@ function countByRating(movies) {}
  *  getBiggestBoxOfficeMovie(movies);
  *  //> "Incredibles 2"
  */
-function convertBoxOfficeToNumber(movie) {}
+const convertBoxOfficeToNumber = ( boxOffice ) => {
+}
 
-function getBiggestBoxOfficeMovie(movies) {}
+function getBiggestBoxOfficeMovie(movies) {
+};
+
 
 /**
  * SOME/EVERY PROBLEMS
