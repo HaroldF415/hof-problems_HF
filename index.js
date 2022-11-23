@@ -68,7 +68,9 @@ function getSongDetails(songs) {
  *  getTitleAndArtist(songs);
  *  //> [ { "Berlin Tsukin": "Taiyo Ky" }, { Up: "Sebastian Kamae" }, ... ]
  */
-function getTitleAndArtist(songs) {}
+function getTitleAndArtist(songs) {
+  return songs.map( song => { return { [song.title] : song.artist } } );
+};
 
 /**
  * FIND PROBLEMS
