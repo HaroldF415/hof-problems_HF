@@ -299,7 +299,7 @@ function anySongIsOverFourMinutes(songs) {
  * @returns {boolean}
  */
 function anySongIsByPeanut(songs) {
-  return songs.any( song => song.artist === 'Peanut' );
+  return songs.some( song => song.artist === 'Peanut' );
 };
 
 // Do not change anything below this line.
