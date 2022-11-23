@@ -263,6 +263,7 @@ function countByRating(movies) {
  *  //> "Incredibles 2"
  */
 const convertBoxOfficeToNumber = ( boxOffice ) => {
+  return Number(boxOffice.split(',').join('').slice(1));
 }
 
 function getBiggestBoxOfficeMovie(movies) {
