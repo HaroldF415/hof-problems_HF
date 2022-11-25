@@ -69,7 +69,7 @@ function getSongDetails(songs) {
  *  //> [ { "Berlin Tsukin": "Taiyo Ky" }, { Up: "Sebastian Kamae" }, ... ]
  */
 function getTitleAndArtist(songs) {
-  return songs.map( song => { return { [song.title] : song.artist } } );
+  return songs.map( song =>  ( { [song.title] : song.artist } )  );
 };
 
 /**
@@ -248,7 +248,7 @@ function getAverageIMDBRating(movies) {
  *  //> { G: 3, PG: 7 }
  */
 function countByRating(movies) {
-  return !movies.length ? {} : movies.map( movie => movie.rated ).reduce( (ratingA, ratingB) => { return ratingA[ratingB] ? ++ratingA[ratingB] : ratingA[ratingB] = 1, ratingA },{} );
+  return !movies.length ? {} : movies.map( movie => movie.rated ).reduce( (ratingA, ratingB) => (ratingA[ratingB] ? ++ratingA[ratingB] : ratingA[ratingB] = 1, ratingA), {} );
 };
 
 /**
